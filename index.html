@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HikeThere</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  </head>
+  <body>
+
+    <!-- Top navigation bar and logo -->
+    <header>
+      <nav>
+        <div class="menu-icon">
+          <i class="fa fa-bars fa-2x"></i>
+        </div>
+
+        <div class="logo">
+          HikeThere
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li><a href="#">Back to Top</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <!-- First image on the page is placed here as well as the "Hikethere!" words in the middle -->
+    <div class="pimg1">
+      <div class="ptext">
+        <span class="border">
+          HikeThere!
+        </span>
+      </div>
+    </div>
+
+    <!-- First section where the three suggestions are placed -->
+    <section class="section section-light">
+
+      <!-- Text describing the first section -->
+      <h1>Top Suggestions</h1>
+      <p>Best hikes near your location</p>
+
+      <!-- Container which holds the suggestions. This uses the pinterest like layout -->
+      <div class="container">
+          <div class="row" id="articles">
+              <div id="wrapper">
+
+                <!-- Javascript adds in the pins within columns2 div -->
+                <div id="columns2">
+                      <!-- js inputs trails here -->
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Second image on the page is placed here as well as the "Trail Locations words" in the middle -->
+    <div class="pimg2">
+      <div class="ptext">
+        <span class="border trans">
+          Trail Locations
+        </span>
+      </div>
+    </div>
+
+    <!-- Second section where the map is placed -->
+    <section class="section section-light">
+      <div id="map"></div>
+    </section>
+
+    <!-- Third image on the page is placed here as well as the "All Trails" words in the middle -->
+    <div class="pimg3">
+      <div class="ptext">
+        <span class="border trans">
+          All Trails
+        </span>
+      </div>
+    </div>
+
+    <!-- Third section where all the trails are placed -->
+    <section class="section section-light">
+
+      <!-- Container which holds all the trails. This uses the pinterest like layout -->
+      <div class="container">
+          <div class="row" id="articles">
+              <div id="wrapper">
+
+                <!-- Javascript adds in the pins within columns div -->
+                <div id="columns">
+                      <!-- js inputs trails here -->
+                </div>
+              </div>
+          </div>
+      </div>
+    </section>
+
+    <!-- Forth image (same image as the first image) on the page is placed here as well as the "MDDN352 - Dhrashti Gandhi" words in the middle -->
+    <div class="pimg1">
+      <div class="ptext">
+        <span class="border">
+          MDDN352 - Dhrashti Gandhi
+        </span>
+      </div>
+    </div>
+
+<!-- ########################### SCRIPTS ARE PLACED UNDER HERE ####################################### -->
+
+    <script src="./js/script.js"></script>
+
+    <!-- This script is where the website starts and where it begins loading in the geo location and begins requesting for the API to send information and then reads it -->
+    <script>
+        $(document).ready( function(){
+
+            // goes to the initSite() method in the script.js file
+            initSite();
+        });
+    </script> 
+
+    <!-- This is where the google API is called and where the google maps is loaded as well as the markers on it -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA5qIlepBMBLfr6DEB_6OB6JfKtyErWYRk&callback=initMap">
+    </script>
+
+    <!-- This is where the header is started and told to either fade in or out once the page scrolls -->
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $(".menu-icon").on("click", function() {
+          $("nav ul").toggleClass("showing");
+        });
+      });
+      $(window).on("scroll", function() {
+        if($(window).scrollTop()) {
+          $('nav').addClass('black');
+        }
+        else {
+          $('nav').removeClass('black');
+        }
+      })
+    </script>
+  </body>
+</html>
